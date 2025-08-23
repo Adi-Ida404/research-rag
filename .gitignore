@@ -1,0 +1,11 @@
+# Virtual envs
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Data & large files
+/data/
+*.pdf
+
+# Secrets
+.env
