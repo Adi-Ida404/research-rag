@@ -6,6 +6,8 @@ __pycache__/
 # Data & large files
 /data/
 *.pdf
+vectorstore/index.faiss
+vectorstore/index.pkl
 
 # Secrets
 .env
