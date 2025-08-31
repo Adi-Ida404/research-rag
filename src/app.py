@@ -69,6 +69,5 @@ async def ask_question_endpoint(request: QuestionRequest):
     Args:
         request (QuestionRequest): The question to ask.
     """
-    qa_chain = build_qa_chain(VECTORSTORE_PATH)
-    answer = ask_question(request.query, qa_chain)
+    answer = ask_question(request.query, VECTORSTORE_PATH)
     return {"query": request.query, "answer": answer}
