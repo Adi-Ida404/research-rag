@@ -34,7 +34,7 @@ async def root():
         "health": "/health"
     }
     
-@ap.get("/health")
+@app.get("/health")
 async def health():
     """
     Health check endpoint.
