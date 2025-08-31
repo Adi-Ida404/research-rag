@@ -6,3 +6,6 @@ fastapi
 uvicorn
 python-dotenv
 langchain-community
+einops
+accelerate
+optimum
