@@ -19,6 +19,29 @@ os.makedirs(DATA_FOLDER, exist_ok=True)
 class QuestionRequest(BaseModel):
     query: str
     
+
+@app.get("/")
+async def root():
+    """
+    Root endpoint for the API.
+
+    Returns:
+        _type_: _description_
+    """
+    return {
+        "message": "Welcome to the Research RAG API",
+        "docs": "/docs",
+        "health": "/health"
+    }
+    
+@ap.get("/health")
+async def health():
+    """
+    Health check endpoint.
+    Returns 200 if app is alive.
+    """
+    return {"status": "healthy"}
+
 @app.post("/upload")
 async def upload_file(file: UploadFile):
     """

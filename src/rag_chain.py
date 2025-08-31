@@ -2,6 +2,18 @@ from langchain_community.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 from transformers import pipeline
 from src.embed_store import load_vectorstore
+import requests
+import os
+
+HF_API_URL = "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
+HF_API_KEY = os.getenv("HF_API_KEY")
+headers = {"Authorization": f"Bearer {HF_API_KEY}"}
+
+def hf_query(prompt: str, max_new_tokens: int = 256):
+    payload = {"inputs": prompt, "parameters": {"max_new_tokens": max_new_tokens}}
+    response = requests.post(HF_API_URL, headers=headers, json=payload)
+    result = response.json()
+    return result[0]["generated_text"]
 
 def load_model(model_id="google/flan-t5-base", max_new_tokens=256):
     pipe = pipeline(
