@@ -1,5 +1,5 @@
 import os
-from langchain.document_loaders import PyPDFLoader, DirectoryLoader
+from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 
 def load_single_pdf(file_path: str):
     """

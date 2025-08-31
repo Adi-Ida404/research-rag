@@ -1,4 +1,4 @@
-from langchain.llms import HuggingFacePipeline
+from langchain_community.llms import HuggingFacePipeline 
 from langchain.chains import RetrievalQA
 from transformers import pipeline
 from src.embed_store import load_vectorstore
