@@ -41,7 +41,7 @@ def build_vectorstore(documents, persist_path: str="vectorstore"):
 
     return vector_store
 
-def upload_vector_to_s3(local_path: str, bucket: str, key: str):
+def upload_vectorstore_to_s3(local_path: str, bucket: str, key: str):
     """
     Uploads a saved FAISS vectorsstore to s3
 

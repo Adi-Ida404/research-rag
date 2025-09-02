@@ -1,11 +1,11 @@
-from fastapi import FastAPI, UploadFile, Form
+from fastapi import FastAPI, UploadFile
 from pydantic import BaseModel
 import os
 import shutil
 
 from src.ingest import load_single_pdf, load_pdfs_from_folder
-from src.embed_store import build_vectorstore, load_vectorstore
-from src.rag_chain import build_qa_chain, ask_question
+from src.embed_store import build_vectorstore, upload_vectorstore_to_s3, download_vectorstore_from_s3
+from src.rag_chain import ask_question
 
 app = FastAPI(title="Research RAG")
 
